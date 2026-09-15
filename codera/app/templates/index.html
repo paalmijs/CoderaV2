@@ -1,12 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Codera</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Codera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-  <h1>Codera</h1>
-  <p>Project scaffold is running. Time to build the quest map.</p>
+<div class="page">
+
+  <div class="hud">
+    <div class="hud-logo pixel"><span class="bracket">&lt;</span>Codera<span class="bracket">/&gt;</span></div>
+    <div class="hud-stats">
+      <div class="stat-pill streak"><span class="icon">🔥</span> 12 days</div>
+      <div class="stat-pill coins"><span class="icon">🪙</span> 340</div>
+      <div class="stat-pill xp"><span class="icon">⚡</span> Lvl 7</div>
+    </div>
+    <div class="hud-avatar"></div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-top">
+      <div>
+        <h1>Loops: Cave of Lost Iterations</h1>
+        <p>Continue the quest to unlock the next chest</p>
+      </div>
+      <button class="btn btn-primary">Continue Quest</button>
+    </div>
+
+    <div class="quest-map">
+      <div class="path-row">
+        <div class="node-col">
+          <div class="node done">✓</div>
+          <div class="node-label">While Basics</div>
+        </div>
+        <div class="node-col">
+          <div class="node done">✓</div>
+          <div class="node-label">For Loops</div>
+        </div>
+        <div class="node-col">
+          <div class="node npc">!</div>
+          <div class="node-label">NPC: Bit the Blacksmith</div>
+        </div>
+        <div class="node-col">
+          <div class="node current pixel">7</div>
+          <div class="node-label">Nested Loops</div>
+        </div>
+        <div class="node-col">
+          <div class="node locked">🔒</div>
+          <div class="node-label">Break/Continue</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="panel chest-panel">
+      <div class="eyebrow">JUST OPENED</div>
+      <h2>Gold Chest</h2>
+      <div class="chest-visual">🧰</div>
+      <div class="sprite-row">
+        <div class="sprite">🐛</div>
+        <div class="sprite rare">🦎</div>
+        <div class="sprite">🐢</div>
+      </div>
+      <div class="buff-tag">🦎 Salamander: +15% XP for the next hour</div>
+    </div>
+
+    <div class="panel boss-panel">
+      <div class="boss-header">
+        <div>
+          <div class="eyebrow" style="color:var(--coral);">WEEKLY BOSS</div>
+          <h2 style="margin-bottom:0;">The Recursion Dragon</h2>
+        </div>
+        <div class="boss-timer">02d : 14h : 08m</div>
+      </div>
+      <div class="boss-hp-track"><div class="boss-hp-fill"></div></div>
+      <p>Total damage from all players: 58,200 / 140,000</p>
+      <p>Your buffs for this battle: +1 hint, +30s time</p>
+    </div>
+  </div>
+
+  <div class="problem-section">
+    <div class="problem-card">
+      <div class="problem-head">
+        <h2 style="margin:0;">Bit's Challenge: Two Sum</h2>
+        <span class="difficulty">Medium</span>
+      </div>
+      <div class="code-block">
+<span class="cm"># Find two numbers that add up to the target</span><br>
+<span class="kw">def</span> <span class="fn">find_pair</span>(nums, target):<br>
+&nbsp;&nbsp;seen = {}<br>
+&nbsp;&nbsp;<span class="kw">for</span> i, n <span class="kw">in</span> enumerate(nums):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> target - n <span class="kw">in</span> seen:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> [seen[target - n], i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;seen[n] = i
+      </div>
+      <div class="reward-row">
+        <div class="reward">🪙 +45 coins</div>
+        <div class="reward">⚡ +80 XP</div>
+        <div class="reward">🧰 1 Silver Chest</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Codera</footer>
+</div>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
